@@ -1,0 +1,30 @@
+<h1>Employees</h1>
+<app-employee-form (onSave)="addToTable($event)"></app-employee-form>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.age }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>
+        <button
+          type="button"
+          (click)="deleteEmployee(emp.id)"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
